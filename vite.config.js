@@ -1,8 +1,11 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
 export default defineConfig({
-  base: "/CarbonNeutrality/", // Replace with your repository name
+  base: "/CarbonNeutrality/", // Ensure this matches your repository name
   plugins: [react()],
-})
+  build: {
+    outDir: "dist", // Ensure build output is correct
+    assetsDir: "assets", // Prevent issues with paths
+  }
+});
